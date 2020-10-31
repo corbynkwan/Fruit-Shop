@@ -1,6 +1,6 @@
 # 4Hour Fruit Website Coding Challenge
 
-![Project Image](./src/assets/images/fruitsunion.png)
+![Project Image](./src/assets/images/fruitsunion.PNG)
 
 
 ---
@@ -42,18 +42,18 @@ Installs dependencies into the node_modules/ directory.<br>
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You should see a UI like this:
 
-![Website Image](./src/assets/images/4hourwebsiteui.png)
+![Website Image](./src/assets/images/4hourwebsiteui.PNG)
 You can click **Less/More** on each product item to increase the quantity of the product(s) you want. 
 <br>
 <br>
 Click **Order Now** for an order summary to be shown
-![Order Summary](./src/assets/images/orderSummary.png)
+![Order Summary](./src/assets/images/orderSummary.PNG)
 
 Click **CONTINUE** for your order to be processed and uploaded to the **database**. Information on how to view the **database** can be viewed [here](#Viewing-the-Database )
 
 
 Apart from ordering you can also create an account by clicking the **Create Account** button.  
-![Create Account Popup](./src/assets/images/createAccountPopup.png)
+![Create Account Popup](./src/assets/images/createAccountPopup.PNG)
 
 Enter a unique **username** and **password** not in the database amd click **Create Account**, and an account will be added to the database. 
 
@@ -63,7 +63,7 @@ Afterwards enter the **username** and **password** of your newly created account
 
 ### Viewing the Database  
 Click this [link](https://console.firebase.google.com/project/market-project-da10f/database/market-project-da10f/data) to view the database in the browser. You should see a UI like this:
-![Database Image](./src/assets/images/firebase.png)
+![Database Image](./src/assets/images/firebase.PNG)
 
 You can click the **+** icon to view the fields of these variables . 
 
