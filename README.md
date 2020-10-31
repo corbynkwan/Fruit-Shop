@@ -1,4 +1,4 @@
-# 4Hour Fruit Website Coding Challenge
+# 4Hour Fruit Shop Website Coding Challenge
 
 ![Project Image](./src/assets/images/fruitsunion.png)
 
@@ -25,7 +25,7 @@ A Fruit Shop Website done for the coding challenge. Users can create an account 
 - CSS
 - Git
 
-[Back To The Top](#4Hour-Fruit-Website-Coding-Challenge)
+[Back To The Top](#4Hour-Fruit-Shop-Website-Coding-Challenge)
 
 ---
 
@@ -42,7 +42,7 @@ Installs dependencies into the /node_modules directory.<br>
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You should see a UI like this:
 
-![Website Image](./src/assets/images/4hourwebsiteui.PNG)
+![Website Image](./src/assets/images/4hourwebsiteindex.PNG)
 You can click **Less/More** on each product item to increase the quantity of the product(s) you want. 
 <br>
 
@@ -95,7 +95,7 @@ You can change the price of the products by **double clicking** on the value, **
 
 
 
-[Back To The Top](#4Hour-Fruit-Website-Coding-Challenge)
+[Back To The Top](#4Hour-Fruit-Shop-Website-Coding-Challenge)
 
 ---
 
@@ -109,4 +109,4 @@ You can change the price of the products by **double clicking** on the value, **
 
 <br>
 
-[Back To The Top](#4Hour-Fruit-Website-Coding-Challenge)
+[Back To The Top](#4Hour-Fruit-Shop-Website-Coding-Challenge)
