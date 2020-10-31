@@ -101,7 +101,7 @@ You can change the price of the products by **double clicking** on the value, **
 
 ## My Information
 [<img align="left" alt="corbynkwan" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />](https://github.com/corbynkwan)
-[<img align="left" alt="corbynkwan | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://linkedin.com/in/corbynkwan)
+[<img align="left" alt="corbynkwan | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />](https://www.linkedin.com/in/corbyn-kwan)
 [<img align="left" alt="corbynkwan | Github" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" />](https://github.com/corbynkwan)
 
 
