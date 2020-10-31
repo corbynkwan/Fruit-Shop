@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 import Auxi from '../../../hoc/Auxi/Auxi.js';
 import Button from '../../UI/Button/Button';
 
-// Returns an Order Summary
-class OrderSummary extends Component {
+// Returns notification when an ordered has been completed.
+class FinishOrderNotification extends Component {
     componentWillUpdate() {
-        console.log('[OrderSummary] WillUpdate');
     }
 
     render () {
@@ -22,4 +21,4 @@ class OrderSummary extends Component {
     }
 }
 
-export default OrderSummary;
+export default FinishOrderNotification;

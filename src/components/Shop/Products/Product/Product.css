@@ -1,11 +1,11 @@
-.BuildControl {
+.Product {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
 }
 
-.BuildControl button {
+.Product button {
     display: block;
     font: inherit;
     padding: 5px;
@@ -17,14 +17,14 @@
 }
 
 
-.BuildControl button:disabled {
+.Product button:disabled {
     background-color: #ccc;
     border: 1px solid #ccc;
     color: white;
     cursor: default;
 }
 
-.BuildControl button:hover:disabled {
+.Product button:hover:disabled {
     background-color: #ccc;
     color: white;
     cursor: not-allowed;
@@ -36,22 +36,22 @@
     width: 80px;
 }
 
-.BuildControl .Less {  
+.Product .Less {  
     background-color: #ccc;
     color: white;
 }
 
-.BuildControl .More {
+.Product .More {
     background-color: #ccc;
     color: white;
 }
 
-.BuildControl .Less:hover, .BuildControl .Less:active {  
+.Product .Less:hover, .Product .Less:active {  
     background-color: #E0E0E0;
     color: white;
 }
 
-.BuildControl .More:hover,.BuildControl .More:active {
+.Product .More:hover,.Product .More:active {
     background-color: #E0E0E0;
     color: white;
 }

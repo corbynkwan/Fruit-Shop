@@ -5,7 +5,7 @@ import Auxi from '../../../hoc/Auxi/Auxi.js';
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
-
+    // A notification with that moves with the top of the page to the middle of the page.
     shouldComponentUpdate ( nextProps, nextState ) {
         return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     }

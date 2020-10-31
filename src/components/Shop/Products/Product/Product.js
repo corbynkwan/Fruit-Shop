@@ -1,10 +1,10 @@
 import React from 'react';
 
-import classes from './BuildControl.css';
+import classes from './Product.css';
 
-// BuildControls is a class that returns a single product. 
-const buildControl = (props) => (
-    <div className={classes.BuildControl}>
+// Products is a class that returns a single product. 
+const product = (props) => (
+    <div className={classes.Product}>
         <div className={classes.Label}>{props.label}</div>
         <button 
             className={classes.Less} 
@@ -17,4 +17,4 @@ const buildControl = (props) => (
     </div>
 );
 
-export default buildControl;
+export default product;

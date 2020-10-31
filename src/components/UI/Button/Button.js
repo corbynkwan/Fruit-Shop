@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Button.css';
-
+// Button class
 const button = (props) => (
     <button
         className={[classes.Button, classes[props.btnType]].join(' ')}

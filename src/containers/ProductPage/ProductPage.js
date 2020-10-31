@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Auxi from '../../hoc/Auxi/Auxi.js';
-import BuildControls from '../../components/Shop/BuildControls/BuildControls';
+import Products from '../../components/Shop/Products/Products';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Shop/OrderSummary/OrderSummary';
 import FinishOrder from '../../components/Shop/FinishOrderNotification/FinishOrderNotification';
@@ -154,7 +154,7 @@ class ProductPage extends Component {
         if ( this.state.products ) {
             order = (
                 <Auxi>
-                    <BuildControls
+                    <Products
                         productAdded={this.addProductHandler}
                         productRemoved={this.removeProductHandler}
                         disabled={disabledInfo}

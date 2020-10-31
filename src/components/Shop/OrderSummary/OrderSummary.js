@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Auxi from '../../../hoc/Auxi/Auxi.js';
 import Button from '../../UI/Button/Button';
 
+// Order Summary is a notification that shows the user what they ordered, and the price of their order.
 class OrderSummary extends Component {
     componentWillUpdate() {
         console.log('[OrderSummary] WillUpdate');

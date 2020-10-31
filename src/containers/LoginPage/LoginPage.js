@@ -89,21 +89,23 @@ class LoginPage extends Component {
     }
     // Changes 'username' state for a new user whenever a 'username' is inputted
     newPasswordHandler = async event => {
-        let accountCopy = {...this.state.loginAccount}
+        let accountCopy = {...this.state.newAccount}
         accountCopy.password = event.target.value
         await this.setState( {
             newAccount: accountCopy
             }
         );
+
     }
     // Changes 'password' state for a new user whenever a 'password' is inputted
     newUserNameHandler = async event => {
-        let accountCopy = {...this.state.loginAccount}
+        let accountCopy = {...this.state.newAccount}
         accountCopy.userName = event.target.value
         await this.setState( {
             newAccount: accountCopy
             }
         );
+
     }
     // Verifies if the inputted username and password and creates a new account and add it's to the database when the 'Create Account' button is clicked inside the CreateAccountBox popup
     createAccountHandler = (event) => {

@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Y
 You can click **Less/More** on each product item to increase the quantity of the product(s) you want. 
 <br>
 
-Click **Order Now** for an order summary to be shown
+Click **Order Now** for an order summary to be shown:
 
 ![Order Summary](./src/assets/images/orderSummary.PNG)
 
@@ -71,13 +71,23 @@ You can click the **+** icon to view the fields of these variables .
 The following is an explations of what each variable's purpose is:
 #### `accounts`
 Stores all the **accounts** created.<br>
+![Accounts Image](./src/assets/images/accounts.PNG)
 
 #### `orders`
 Stores all the **orders** created. Each order stores a **name**, **address**, **price**, and **products** <br>
 #### `product_prices`
-Stores all the **price of each product**<br>
+Stores all the **price of each product**
+
+![Product Prices Image](./src/assets/images/product_prices.PNG)
+
+
+You can change the price of the products by **double clicking** on the value, **typing** the desired price, and **pressing** the enter key. **Refresh** the website and the changes will be reflected.
+
 #### `products`
 Stores the name of **products** that are being sold<br>
+![Product Quantity Image](./src/assets/images/products_quantity.PNG)
+
+You can change the price of the products by **double clicking** on the value, **typing** the desired quantity, and **pressing** the enter key. **Refresh** the website and the changes will be reflected.
 #### API Reference
 
 

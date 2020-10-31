@@ -1,7 +1,7 @@
 import React from 'react';
 
-import classes from './BuildControls.css';
-import BuildControl from './BuildControl/BuildControl';
+import classes from './Products.css';
+import Product from './Product/Product';
 
 const controls = [
     { label: 'Apple', type: 'apple' },
@@ -9,15 +9,15 @@ const controls = [
     { label: 'Grape', type: 'grape' },
     { label: 'Orange', type: 'orange' },
 ];
-// BuildControls is a class that returns a list of BuildControl or in other words a list of products. 
-const buildControls = (props) => (
-    <div className={classes.BuildControls}>
+// Products is a class that returns a list of products. 
+const products = (props) => (
+    <div className={classes.Products}>
         <div>
         <span className = {classes.quantity}>Quantity</span>
         </div>
 
         {controls.map(ctrl => (
-            <BuildControl 
+            <Product 
                 key={ctrl.label} 
                 label={ctrl.label}
                 added={() => props.productAdded(ctrl.type)}
@@ -34,4 +34,4 @@ const buildControls = (props) => (
     </div>
 );
 
-export default buildControls;
+export default products;
