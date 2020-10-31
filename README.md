@@ -15,7 +15,7 @@
 
 ## Description
 
-A Fruit Website done for the coding challenge. Users can create an account and buy fruits which sends it to the firebase server that stores their order.
+A Fruit Shop Website done for the coding challenge. Users can create an account and buy fruits which sends it to the firebase server that stores their order.
 
 #### Technologies
 
@@ -75,6 +75,9 @@ Stores all the **accounts** created.<br>
 
 #### `orders`
 Stores all the **orders** created. Each order stores a **name**, **address**, **price**, and **products** <br>
+![Product Prices Image](./src/assets/images/orders.PNG)
+
+
 #### `product_prices`
 Stores all the **price of each product**
 
