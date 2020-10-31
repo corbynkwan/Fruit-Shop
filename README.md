@@ -45,8 +45,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. Y
 ![Website Image](./src/assets/images/4hourwebsiteui.PNG)
 You can click **Less/More** on each product item to increase the quantity of the product(s) you want. 
 <br>
-<br>
+
 Click **Order Now** for an order summary to be shown
+
 ![Order Summary](./src/assets/images/orderSummary.PNG)
 
 Click **CONTINUE** for your order to be processed and uploaded to the **database**. Information on how to view the **database** can be viewed [here](#Viewing-the-Database )
