@@ -24,6 +24,9 @@ A Fruit Website done for the coding challenge. User can create an account and bu
 
 - React
 - Firebase
+- HTML5
+- CSS
+- Git
 
 [Back To The Top](#4Hour-Fruit-Website-Coding-Challenge)
 
