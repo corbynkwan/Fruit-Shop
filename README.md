@@ -1,6 +1,6 @@
 # 4Hour Fruit Website Coding Challenge
 
-![Project Image](./src/assets/images/fruitsunion.PNG)
+![Project Image](./src/assets/images/fruitsunion.png)
 
 
 ---
