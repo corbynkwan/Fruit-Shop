@@ -43,6 +43,7 @@ Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. You should see a UI like this:
 
 ![Website Image](./src/assets/images/4hourwebsiteindex.PNG)
+
 You can click **Less/More** on each product item to increase the quantity of the product(s) you want. 
 <br>
 
