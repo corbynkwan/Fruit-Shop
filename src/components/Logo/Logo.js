@@ -1,6 +1,6 @@
 import React from 'react';
 
-import fruitLogo from '../../assets/images/fruitsunion.PNG';
+import fruitLogo from '../../assets/images/fruitsunion.png';
 import classes from './Logo.css';
 
 const logo = (props) => (
