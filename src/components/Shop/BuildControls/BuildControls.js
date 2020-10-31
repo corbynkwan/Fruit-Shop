@@ -9,7 +9,7 @@ const controls = [
     { label: 'Grape', type: 'grape' },
     { label: 'Orange', type: 'orange' },
 ];
-
+// BuildControls is a class that returns a list of BuildControl or in other words a list of products. 
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
         <div>

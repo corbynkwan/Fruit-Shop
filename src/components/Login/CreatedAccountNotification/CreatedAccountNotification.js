@@ -4,13 +4,12 @@ import Auxi from '../../../hoc/Auxi/Auxi.js';
 import Button from '../../UI/Button/Button';
 
 // Returns an Order Summary
-class OrderSummary extends Component {
+class CreatedAccountNotification extends Component {
     componentWillUpdate() {
-        console.log('[OrderSummary] WillUpdate');
+        console.log('[CreatedAccountNotification] WillUpdate');
     }
 
     render () {
-        //Maps the products you selected in order to know the quantity, and price
         return (
             <Auxi>
                 <h3>You have successfully created an account!</h3>
@@ -20,4 +19,4 @@ class OrderSummary extends Component {
     }
 }
 
-export default OrderSummary;
+export default CreatedAccountNotification;

@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './BuildControl.css';
 
+// BuildControls is a class that returns a single product. 
 const buildControl = (props) => (
     <div className={classes.BuildControl}>
         <div className={classes.Label}>{props.label}</div>

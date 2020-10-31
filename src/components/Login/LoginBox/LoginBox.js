@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Auxi from '../../../hoc/Auxi/Auxi.js';
 import classes from '../LoginBox/LoginBox.css';
-
+// Login box for 
 const loginBox = (props) => { 
     let incorrectAccount = null;
     console.log(props)

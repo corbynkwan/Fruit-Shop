@@ -5,6 +5,7 @@ import classes from './Layout.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
+// Layout for all pages. Contains a Nav bar and 
 class Layout extends Component {
     state = {
         showSideDrawer: false

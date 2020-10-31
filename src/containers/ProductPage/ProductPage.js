@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 
 import Auxi from '../../hoc/Auxi/Auxi.js';
-import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import BuildControls from '../../components/Shop/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
-import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import FinishOrder from '../../components/Burger/FinishOrderNotification/FinishOrderNotification';
-import CancelOrder from '../../components/Burger/CancelOrderNotification/CancelOrderNotification';
+import OrderSummary from '../../components/Shop/OrderSummary/OrderSummary';
+import FinishOrder from '../../components/Shop/FinishOrderNotification/FinishOrderNotification';
+import CancelOrder from '../../components/Shop/CancelOrderNotification/CancelOrderNotification';
 import CreateAccountBox from '../../components/Login/CreateAccountBox/CreateAccountBox';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 
 
+//Product page that contains a products where users can Select a product and the quantity they want to buy. 
+// Shows an order summary when the 'Order now' button is clicked
+// Notification shows when 
+// 1. Order is successfully receieved by the server
+// 2. Order is cancelled successfully. 
 
 class ProductPage extends Component {
     // constructor(props) {
@@ -30,7 +35,7 @@ class ProductPage extends Component {
         cancelled: false 
     }
 
-    // Setup to connect to the database and assign product prices, and names as soon as page loads. 
+    // Gets product names and their prices from the database.
     componentDidMount () {
         axios.get( 'https://market-project-da10f.firebaseio.com//products.json' )
             .then( response => {
@@ -47,7 +52,7 @@ class ProductPage extends Component {
                 this.setState( { error: true } );
         } );
     }
-
+    // Updates the price of 'Current Price' whenever the desired quantity is updated.
     updatePurchaseState ( products ) {
         const sum = Object.keys( products )
             .map( igKey => {
@@ -57,7 +62,7 @@ class ProductPage extends Component {
                 return sum + el;
             }, 0 );
     }
-
+    // Updates the price of 'Current Price' whenever the desired quantity increases
     addProductHandler = ( type ) => {
         const oldCount = this.state.products[type];
         const updatedCount = oldCount + 1;
@@ -71,7 +76,7 @@ class ProductPage extends Component {
         this.setState( { totalPrice: newPrice, products: updatedproducts } );
         this.updatePurchaseState( updatedproducts );
     }
-
+    // Updates the price of 'Current Price' whenever the desired quantity decreases
     removeProductHandler = ( type ) => {
         const oldCount = this.state.products[type];
         if ( oldCount <= 0 ) {
@@ -88,16 +93,18 @@ class ProductPage extends Component {
         this.setState( { totalPrice: newPrice, products: updatedproducts } );
         this.updatePurchaseState( updatedproducts );
     }
-
+    // Updates the state of 'purchasing' whenever when the user confirms the checkout. 
+    // By doing so runs the loading gif
     purchaseHandler = () => {
         this.setState( { purchasing: true } );
     }
-
+    // Updates the state of 'purchasing' whenever when the user cancels the checkout while the server is still processing the request. 
+    // By doing so removes the loading gif.
     purchaseCancelHandler = () => {
         this.setState( { purchasing: false, cancelled: true } );
     }
     
-
+    // Sends the customer's shipping and order data to the server when the 'Continue' button in the OrderSummary popup is clicked. 
     purchaseContinueHandler = () => {
         this.setState( { loading: true } );
         const order = {
@@ -123,9 +130,11 @@ class ProductPage extends Component {
                 this.setState( { loading: false, purchasing: false } );
             } );
     }
+    // Closes the 'Order has been processed' popup
     verifyFinishOrderNotification = () => {
         this.setState( { purchased : false } );
     }
+    // Closes the 'Order has been cancelled' popup
     verifyCancelledOrderNotification = () => {
         this.setState( { cancelled: false  } );
     }
@@ -173,6 +182,7 @@ class ProductPage extends Component {
         if ( this.state.loading ) {
             orderSummary = <Spinner />;
         }
+        {/* LoginPage returns a list of products from the server with popups that show up when specific conditions are met i.e. user clicks 'Order Now' button*/}
         return (
             <Auxi>
                 {/* Shows summary when clicking continue closes when you clicked ok, and immediately opens the finishOrderNotification*/}
