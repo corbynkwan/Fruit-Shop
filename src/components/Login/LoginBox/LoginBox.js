@@ -1,33 +1,33 @@
 import React, { useEffect } from 'react'
 import Auxi from '../../../hoc/Auxi/Auxi.js';
 import classes from '../LoginBox/LoginBox.css';
+import {Link} from 'react-router-dom'; 
 // Login box for 
 const loginBox = (props) => { 
     let incorrectAccount = null;
-    console.log(props)
-    console.log(props.incorrectAccount)
-
+    let loginButton =  <button className={classes.btn} onClick={props.loginAccountHandler}>Login </button>
     if(props.incorrectAccount) { 
         incorrectAccount = <p className ={classes.incorrect}>Incorrect username or password</p>
     } 
+    if (props.loggedIn){ 
+        loginButton = <Link to='/shop' > 
+        <button className={classes.btn} onClick={props.loginAccountHandler}>Login </button>
+        </Link>
+    }
 
     return (
-        <Auxi>
             <div className={classes.container}>
-                <input onChange ={props.userNameHandler}type="text" name="username" placeholder="Username" required></input>
-                <input onChange ={props.passwordHandler}type="password" name="password" placeholder="Password" required></input>
+                <input onKeyDown={props.handleKeyPressForLoginAccount}onChange ={props.userNameHandler}type="text" name="username" placeholder="Username" required></input>
+                <input  onKeyDown={props.handleKeyPressForLoginAccount} onChange ={props.passwordHandler}type="password" name="password" placeholder="Password" required></input>
                 {incorrectAccount}
-                <button
-                    className={classes.btn}
-                    onClick={props.loginAccountHandler}>Login
-                </button>
+                {loginButton}
                 <button 
                     className={classes.btn}
                     onClick={props.clicked}>Create Account
                 </button>
             </div>
             
-        </Auxi>
+
 
     )
 }

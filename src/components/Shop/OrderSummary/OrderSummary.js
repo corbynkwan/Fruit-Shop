@@ -24,6 +24,8 @@ class OrderSummary extends Component {
                 <ul>
                     {productSummary}
                 </ul>
+                <p><strong>Name: {this.props.account.name + " " + this.props.account.lastName}</strong></p>
+                <p><strong>Address: {this.props.account.address}</strong></p>
                 <p><strong>Total Price: {this.props.price.toFixed( 2 )}</strong></p>
                 <p>Continue to Checkout?</p>
                 <Button btnType="Danger" clicked={this.props.purchaseCancelled}>CANCEL</Button>

@@ -19,12 +19,14 @@ import axios from '../../axios-orders';
 // 2. Order is cancelled successfully. 
 
 class ProductPage extends Component {
+    // for example:
+
     // constructor(props) {
     //     super(props);
     //     this.state = {...}
     // }
     state = {
-        PRODUCT_PRICES: null,
+        productsPrices: {},
         products: null,
         totalPrice: 0.0,
         purchasable: true,
@@ -32,25 +34,39 @@ class ProductPage extends Component {
         loading: false,
         error: false,
         purchased: false,
-        cancelled: false 
+        cancelled: false, 
+        account: null,
+        controls: []
     }
-
+    // Gets the account from LoginPage 
+    componentWillMount () {
+        this.state.account = this.props.location.state.account
+      }
     // Gets product names and their prices from the database.
     componentDidMount () {
-        axios.get( 'https://market-project-da10f.firebaseio.com//products.json' )
+        axios.get( 'https://fruit-website.firebaseio.com/product_quantities.json' )
             .then( response => {
                 this.setState( { products: response.data } );
+                //Setting the List of fruits here. 
+                let arr = []
+                for(let key of Object.keys(this.state.products)) { 
+                    let firstKeyLetterUppercase = key.charAt(0).toUpperCase() + key.slice(1)
+                    arr.push({label: firstKeyLetterUppercase, type: key})
+                }
+                this.setState({controls: arr})
             } )
             .catch( error => {
                 this.setState( { error: true } );
             } );
-        axios.get( 'https://market-project-da10f.firebaseio.com//product_prices.json' )
+        axios.get( 'https://fruit-website.firebaseio.com/product_prices.json' )
             .then( response => {
-                this.setState( { PRODUCT_PRICES: response.data } );
+                console.log(response.data)
+                this.setState( { productsPrices: response.data } );
             } )
             .catch( error => {
                 this.setState( { error: true } );
         } );
+        
     }
     // Updates the price of 'Current Price' whenever the desired quantity is updated.
     updatePurchaseState ( products ) {
@@ -64,13 +80,14 @@ class ProductPage extends Component {
     }
     // Updates the price of 'Current Price' whenever the desired quantity increases
     addProductHandler = ( type ) => {
+        console.log(this.state.products)
         const oldCount = this.state.products[type];
         const updatedCount = oldCount + 1;
         const updatedproducts = {
             ...this.state.products
         };
         updatedproducts[type] = updatedCount;
-        const priceAddition = this.state.PRODUCT_PRICES[type];
+        const priceAddition = this.state.productsPrices[type];
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + priceAddition;
         this.setState( { totalPrice: newPrice, products: updatedproducts } );
@@ -87,7 +104,7 @@ class ProductPage extends Component {
             ...this.state.products
         };
         updatedproducts[type] = updatedCount;
-        const priceDeduction = this.state.PRODUCT_PRICES[type];
+        const priceDeduction = this.state.productsPrices[type];
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice - priceDeduction;
         this.setState( { totalPrice: newPrice, products: updatedproducts } );
@@ -109,17 +126,12 @@ class ProductPage extends Component {
         this.setState( { loading: true } );
         const order = {
             products: this.state.products,
-            price: this.state.totalPrice,
+            price: this.state.totalPrice.toFixed( 2 ),
             customer: {
-                name: 'CustomerName',
-                address: {
-                    street: 'Test Street',
-                    zipCode: '0000',
-                    country: 'Hong Kong'
-                },
-                email: 'testy@Testmail.com'
-            },
-            deliveryMethod: '1 day'
+                name: this.state.account.name + " " + this.state.account.lastName,
+                address: this.state.account.address
+            }
+            
         }
         axios.post( '/orders.json', order )
             .then( response => {
@@ -150,7 +162,6 @@ class ProductPage extends Component {
         let finishOrderNotification = null;
         let cancelOrderNotification = null; 
         let order = this.state.error ? <p>products can't be loaded!</p> : <Spinner />;
-
         if ( this.state.products ) {
             order = (
                 <Auxi>
@@ -162,15 +173,19 @@ class ProductPage extends Component {
                         ordered={this.purchaseHandler}
                         price={this.state.totalPrice} 
                         products = {this.state.products}
+                        productsPrices = {this.state.productsPrices}
+                        controls = {this.state.controls}
                         />
                         
                 </Auxi>
             );
             orderSummary = <OrderSummary
                 products={this.state.products}
+                account={this.state.account}
                 price={this.state.totalPrice}
                 purchaseCancelled={this.purchaseCancelHandler}
-                purchaseContinued={this.purchaseContinueHandler} />;
+                purchaseContinued={this.purchaseContinueHandler} 
+                />;
             finishOrderNotification = <FinishOrder 
                 purchaseContinued={this.verifyFinishOrderNotification}
             ></FinishOrder>
@@ -182,7 +197,8 @@ class ProductPage extends Component {
         if ( this.state.loading ) {
             orderSummary = <Spinner />;
         }
-        {/* LoginPage returns a list of products from the server with popups that show up when specific conditions are met i.e. user clicks 'Order Now' button*/}
+        {
+        /* LoginPage returns a list of products from the server with popups that show up when specific conditions are met i.e. user clicks 'Order Now' button*/}
         return (
             <Auxi>
                 {/* Shows summary when clicking continue closes when you clicked ok, and immediately opens the finishOrderNotification*/}

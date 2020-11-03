@@ -33,7 +33,7 @@
 .Label {
     padding: 10px;
     font-weight: bold;
-    width: 80px;
+    width: 120px;
 }
 
 .Product .Less {  
@@ -54,4 +54,7 @@
 .Product .More:hover,.Product .More:active {
     background-color: #E0E0E0;
     color: white;
+}
+.Product .totalPriceValue { 
+    margin-left:60px
 }
