@@ -27,6 +27,15 @@ A Fruit Shop Website done for the coding challenge. Users can create an account 
 - CSS
 - Git
 
+#### Classes I think are important
+
+- LoginPage.js
+- ProductPage.js
+- LoginBox.js
+- CreateAccountBox.js
+- Products.js
+- Product.js
+
 [Back To The Top](#4Hour-Fruit-Shop-Website-Coding-Challenge)
 
 ---
