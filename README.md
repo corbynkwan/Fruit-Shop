@@ -74,7 +74,8 @@ Complete the form. If you make a mistake you will get error messages like the fo
 Once you complete the form, an account will be added to the database. Information on how to view the **database** can be viewed [here](#Viewing-the-Database)
 
 Afterwards enter the **username** and **password** of your newly created account in the login form. This notification should appear:
-![Order Summary](./src/assets/images/successfulLoginNotification.PNG)
+
+![Successful Login Notification](./src/assets/images/successfulLoginNotification.PNG)
 
 Click Ok and you will be redirected to the **ProductPage**
 
@@ -118,7 +119,7 @@ You can change the price of the products by **double clicking** on the value, **
 
 #### `products`
 Stores the name of **products** that are being sold<br>
-![Product Quantity Image](./src/assets/images/products_quantity.PNG)
+![Product Quantity Image](./src/assets/images/product_quantities.PNG)
 
 You can change the initial quantity of the products by **double clicking** on the value, **typing** the desired quantity, and **pressing** the enter key. **Refresh** the website and the changes will be reflected.
 
