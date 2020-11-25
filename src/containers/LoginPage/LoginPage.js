@@ -94,11 +94,17 @@ class LoginPage extends Component {
         Object.keys(this.state.accounts).forEach(key => {
             if(this.state.accounts[key].userName == this.state.loginAccount.userName && this.state.accounts[key].password == this.state.loginAccount.password) { 
                 this.setState({loggedIn: true, verifyLogin: true, account: this.state.accounts[key]})
+                console.log(this.state.account); 
             }
           });
           if(this.state.verifyLogin == false) { 
               this.setState({incorrectAccount:true}) 
           }
+    }
+    loginGuestHandler = async () => { 
+        let guestAccount = {address: "123 Guest Street", lastName: "Mess", name: "Guest", password: "guestPass", userName: "guestUser"}
+        this.setState({loggedIn: true, verifyLogin: true, account: guestAccount})
+
     }
     handleKeyPressForLoginAccount(event) { 
         if (event.key === 'Enter') {
@@ -217,7 +223,7 @@ class LoginPage extends Component {
     }
     render () {
         let createAccountBox = <CreateAccountBox showInvalidFieldNotification={this.state.showInvalidFieldNotification}showUserNameTakenNotification={this.state.showUserNameTakenNotification}newAccount={this.state.newAccount}handleKeyPressForCreateAccountBox={this.handleKeyPressForCreateAccountBox.bind(this)}newLastNameHandler={this.newLastNameHandler}newNameHandler={this.newNameHandler}newAddressHandler = {this.newAddressHandler}newUserNameHandler = {this.newUserNameHandler} newPasswordHandler = {this.newPasswordHandler} createAccountHandler = {this.createAccountHandler}/>
-        let loginBox = <LoginBox handleKeyPressForLoginAccount = {this.handleKeyPressForLoginAccount.bind(this)}incorrectAccount = {this.state.incorrectAccount}clicked = {this.openCreateAccountBoxHandler} userNameHandler = {this.userNameHandler} passwordHandler = {this.passwordHandler} loggedIn = {this.state.loggedIn}loginAccountHandler = {this.loginAccountHandler}></LoginBox>
+        let loginBox = <LoginBox loginGuestHandler={this.loginGuestHandler} handleKeyPressForLoginAccount = {this.handleKeyPressForLoginAccount.bind(this)}incorrectAccount = {this.state.incorrectAccount}clicked = {this.openCreateAccountBoxHandler} userNameHandler = {this.userNameHandler} passwordHandler = {this.passwordHandler} loggedIn = {this.state.loggedIn}loginAccountHandler = {this.loginAccountHandler}></LoginBox>
         let loggedinNotification = <LoggedInNotification clicked={this.verifyLogin}/>
         let createdAccountNotification = <CreatedAccountNotification clicked={this.verifyCreatedAccount}></CreatedAccountNotification>
         if(this.state.loggedIn) { 

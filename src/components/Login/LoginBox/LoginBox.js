@@ -25,6 +25,10 @@ const loginBox = (props) => {
                     className={classes.btn}
                     onClick={props.clicked}>Create Account
                 </button>
+                <button 
+                    className={classes.btn}
+                    onClick={props.loginGuestHandler}>Login As Guest
+                </button>
             </div>
             
 
