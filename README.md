@@ -19,6 +19,7 @@
 
 A Fruit Shop Website done for the coding challenge. Users can create an account and buy fruits which sends it to the firebase server that stores their order.
 
+You can [here](https://floating-dawn-11527.herokuapp.com/) to open the demo. 
 #### Technologies
 
 - React
@@ -52,6 +53,9 @@ A Fruit Shop Website done for the coding challenge. Users can create an account 
 ## How To Use
 
 ### Opening the website
+You can [here](https://floating-dawn-11527.herokuapp.com/) to open the demo. 
+
+Or if you want to set it up locally:
 
 Open the terminal and go to the project directory. Then you run in order:
 #### `npm install`
